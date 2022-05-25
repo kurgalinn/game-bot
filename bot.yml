@@ -1,0 +1,40 @@
+settings:
+  token_env: TELEGRAM_API_TOKEN
+  parse_mode: html
+
+config:
+
+commands:
+  /start: Start bot
+
+buttons:
+  movie_game:
+    unique: movie_game
+    text: '{{ text `btn_movie_game` }}'
+
+  scoreboard:
+    unique: scoreboard
+    text: '{{ text `btn_scoreboard` }}'
+
+  profile:
+    unique: profile
+    text: '{{ text `btn_profile` }}'
+
+  help:
+    unique: help
+    text: '{{ text `btn_help` }}'
+
+  edit_nickname:
+    unique: edit_nickname
+    text: '{{ text `btn_edit_nickname` }}'
+
+  back:
+    unique: back
+    text: '{{ text `btn_back` }}'
+
+markups:
+  start:
+    - [ movie_game, scoreboard, profile ]
+  profile:
+    - [ back, edit_nickname ]
+    - [ help ]
