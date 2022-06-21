@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7.0-alpine
+    volumes:
+      - ./data/redis:/data
+  bot:
+    build: ./
+    command: /bot
+    restart: on-failure:3
+    volumes:
+      - ./data/sqlite:/data/sqlite
+    depends_on:
+      - redis
